@@ -3,8 +3,117 @@
 <head>
   <meta charset="utf-8">
   <title>UiNotes</title>
+  <link type="text/css" rel="stylesheet" href="turtle.css">
+  <link type="text/css" rel="stylesheet" href="fa/css/all.css">
+  <style>
+    /* Top Navigation */
+
+      /* Tools List */
+      #tools-list {
+
+      }
+
+      #tools-list ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        background-color: #3a3a3a;
+        box-shadow: 0 1px 4px 2px rgba(0,0,0,.25);
+      }
+
+      #tools-list li {
+        margin: 0 8px;
+        padding: 6px;
+        width: 52px;
+        height: 52px;
+      }
+
+      #tools-list i {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        padding: 10px;
+        border-radius: 50%;
+        color: #3a3a3a;
+        text-shadow: 2px 2px 4px rgba(0,0,0,.25);
+        background-color: #e3e3e3;
+        box-shadow: inset 0 0 2px rgba(0,0,0,.75);
+        overflow: hidden;
+        transition: 0.3s;
+      }
+
+      #tools-list i:hover {
+        cursor: pointer;
+        box-shadow: none;
+        background-color: #3a3a3a;
+      }
+
+      #tools-list i::before {
+        position: absolute;
+        z-index: 2;
+        transition: 0.3s;
+      }
+
+      #tools-list i:hover::before {
+        color: #e3e3e3;
+      }
+
+      #tools-list i::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        border-radius: 50%;
+        background-color: #3a3a3a;
+        z-index: -1;
+        transition: top 0.3s, left 0.3s, width 0.3s, height 0.3s;
+      }
+
+      #tools-list i:hover::after {
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 52px;
+        height: 52px;
+      }
+
+      #tools-list li:last-child {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        right: 12px;
+      }
+
+      #tools-list img {
+        width: 64px;
+        height: 64px;
+      }
+
+      /* Active Elements */
+      #tools-list i.active {
+        color: #e3e3e3;
+        text-shadow: 2px 2px 4px rgba(0,0,0,.25);
+        background-color: #3a3a3a;
+        box-shadow: none;
+      }
+  </style>
 </head>
 <body>
-  <h1>Currently in progress</h1>
+  <div id="top-nav">
+    <div id="tools-list">
+      <ul>
+        <li><i class="fas fa-pencil-alt fa-2x active"></i></li>
+        <li><i class="fas fa-highlighter fa-2x"></i></li>
+        <li><i class="fas fa-eraser fa-2x"></i></li>
+        <li><i class="fas fa-cut fa-2x"></i></li>
+        <li><img src="logo/gradient/logo_dark.png" width="64px" height="64px"></li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
